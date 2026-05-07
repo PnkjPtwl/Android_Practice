@@ -1,62 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
-    android:background="#F5F7FA">
+    android:padding="16dp">
 
-    <!-- Title -->
-    <TextView
+    <!-- HEADER WITH THEME TOGGLE & HISTORY -->
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="📝 My Notes"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:textColor="#333"
-        android:gravity="center"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="20dp">
 
-    <!-- Title Input -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MY TODOS"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#FF9800"/>
+
+            <Button
+                android:id="@+id/historyBtn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="History 📜"
+                android:textColor="#2196F3"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/themeSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dark"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <!-- TITLE INPUT -->
+
     <EditText
         android:id="@+id/titleInput"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Title"
-        android:padding="12dp"
-        android:background="@android:drawable/edit_text"
-        android:layout_marginBottom="10dp"/>
+        android:layout_height="wrap_content"
+        android:hint="Enter title"
+        android:textColor="#000000"
+        android:textColorHint="#888888"
+        android:backgroundTint="#4CAF50"/>
 
-    <!-- Description Input -->
+    <!-- DESCRIPTION INPUT -->
+
     <EditText
         android:id="@+id/descInput"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:hint="Description"
-        android:padding="12dp"
-        android:background="@android:drawable/edit_text"
-        android:layout_marginBottom="16dp"/>
+        android:layout_height="wrap_content"
+        android:hint="Enter description"
+        android:textColor="#000000"
+        android:textColorHint="#888888"
+        android:backgroundTint="#4CAF50"
+        android:layout_marginTop="10dp"/>
 
-    <!-- Add Button -->
+    <!-- ADD BUTTON -->
+
     <Button
         android:id="@+id/addBtn"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Add Note"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:backgroundTint="#4CAF50"
+        android:layout_height="wrap_content"
+        android:text="ADD TODO"
         android:textColor="#FFFFFF"
-        android:layout_marginBottom="16dp"/>
+        android:backgroundTint="#FF9800"
+        android:layout_marginTop="16dp"/>
 
-    <!-- List -->
+    <!-- LIST VIEW -->
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:dividerHeight="8dp"/>
+        android:layout_marginTop="20dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"/>
 
 </LinearLayout>
